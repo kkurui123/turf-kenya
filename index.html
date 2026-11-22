@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turf Kenya | Football Tournaments, Teams and Fixtures</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turf Kenya | Football Tournaments, Teams and Players</title>
 
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
@@ -15,127 +15,113 @@
       muted
       loop
       playsinline
-      preload="auto"
     >
       <source
         src="assets/football-background.mp4"
         type="video/mp4"
-      >
+      />
     </video>
   </div>
 
-  <div class="page-overlay"></div>
-
   <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">TK</span>
-
-        <span class="brand-name">
-          Turf Kenya
-        </span>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        Turf Kenya
       </a>
 
-      <nav class="site-nav">
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="auth/login.html">
-          Login
-        </a>
-
-        <a href="auth/register.html">
-          Register
-        </a>
+      <nav class="main-nav">
+        <a href="#teams">Teams</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="auth/login.html">Login</a>
+        <a href="auth/register.html">Register</a>
       </nav>
     </div>
   </header>
 
-  <main class="home-main">
+  <main>
     <section class="hero">
-      <p class="hero-eyebrow">
-        Kenyan grassroots football
-      </p>
+      <div class="container hero-content">
+        <h1>
+          Play. Compete. Win.
+        </h1>
 
-      <h1>
-        Play. Compete. Grow.
-      </h1>
+        <p>
+          Turf Kenya helps football teams, players and tournament organisers
+          connect, manage tournaments and grow the game.
+        </p>
 
-      <p class="hero-text">
-        Turf Kenya helps players, coaches, and tournament
-        organisers discover teams, join tournaments, view
-        fixtures, and follow local football across Kenya.
-      </p>
+        <div class="hero-actions">
+          <a
+            href="auth/register.html"
+            class="btn btn-light"
+          >
+            Get started
+          </a>
 
-      <div class="hero-actions">
-        <a
-          href="auth/register.html"
-          class="btn btn-light"
-        >
-          Get started
-        </a>
+          <a
+            href="auth/login.html"
+            class="btn btn-outline"
+          >
+            Login
+          </a>
 
-        <a
-          href="auth/login.html"
-          class="btn btn-outline"
-        >
-          Login
-        </a>
+          <button
+            type="button"
+            id="google-sign-in-button"
+            class="btn btn-google"
+          >
+            Continue with Google
+          </button>
+        </div>
       </div>
     </section>
 
-    <section class="home-content">
-      <section class="home-column">
-        <div class="column-heading">
-          <h2>
-            Available teams
-          </h2>
-
-          <p>
-            Discover active football teams across Kenya.
-          </p>
-        </div>
+    <section
+      id="teams"
+      class="section"
+    >
+      <div class="container">
+        <h2>
+          Featured Teams
+        </h2>
 
         <div
           id="teams-container"
-          class="cards-container"
+          class="cards-grid"
         >
-          <p class="loading-text">
-            Loading teams...
-          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="home-column">
-        <div class="column-heading">
-          <h2>
-            Available tournaments
-          </h2>
-
-          <p>
-            Find tournaments open for teams and players.
-          </p>
-        </div>
+    <section
+      id="tournaments"
+      class="section section-alt"
+    >
+      <div class="container">
+        <h2>
+          Tournaments
+        </h2>
 
         <div
           id="tournaments-container"
-          class="cards-container"
+          class="cards-grid"
         >
-          <p class="loading-text">
-            Loading tournaments...
-          </p>
         </div>
-      </section>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>
-      © Turf Kenya. Building grassroots football.
-    </p>
+    <div class="container">
+      <p>
+        &copy; Turf Kenya. All rights reserved.
+      </p>
+    </div>
   </footer>
 
-  <script type="module" src="js/public-home.js"></script>
+  <script
+    type="module"
+    src="js/public-home.js"
+  ></script>
 </body>
 </html>

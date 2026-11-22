@@ -1,212 +1,187 @@
-"use strict";
-
+import { supabase } from "./config/supabase.js";
 
 const teamsContainer =
-  document.getElementById("teams-container");
+  document.getElementById(
+    "teams-container"
+  );
 
 const tournamentsContainer =
-  document.getElementById("tournaments-container");
+  document.getElementById(
+    "tournaments-container"
+  );
 
-
-let supabase = null;
-
-
-function showMessage(
-  container,
-  text
-) {
-  container.textContent = "";
-
-  const message =
-    document.createElement("p");
-
-  message.className = "loading-text";
-  message.textContent = text;
-
-  container.appendChild(message);
-}
-
+const googleSignInButton =
+  document.getElementById(
+    "google-sign-in-button"
+  );
 
 function createTeamCard(team) {
-  const teamCard =
+  const card =
     document.createElement("article");
 
-  teamCard.className = "home-card";
+  card.className = "card";
 
-  const teamName =
+  const name =
     document.createElement("h3");
 
-  teamName.textContent =
+  name.textContent =
     team.name || "Unnamed team";
 
-  const teamCounty =
+  const location =
     document.createElement("p");
 
-  teamCounty.textContent =
-    "County: " +
-    (team.county || "Not set");
+  location.textContent =
+    team.location ||
+    "Location not provided";
 
-  const teamStatus =
+  const status =
     document.createElement("span");
 
-  teamStatus.className = "card-tag";
-  teamStatus.textContent =
-    team.status || "active";
+  status.className = "status";
 
-  teamCard.appendChild(teamName);
-  teamCard.appendChild(teamCounty);
-  teamCard.appendChild(teamStatus);
+  status.textContent =
+    team.status || "Active";
 
-  if (team.description) {
-    const teamDescription =
-      document.createElement("p");
+  card.appendChild(name);
+  card.appendChild(location);
+  card.appendChild(status);
 
-    teamDescription.textContent =
-      team.description;
-
-    teamCard.appendChild(
-      teamDescription
-    );
-  }
-
-  return teamCard;
+  return card;
 }
-
 
 function createTournamentCard(
   tournament
 ) {
-  const tournamentCard =
+  const card =
     document.createElement("article");
 
-  tournamentCard.className = "home-card";
+  card.className = "card";
 
-  const tournamentName =
+  const name =
     document.createElement("h3");
 
-  tournamentName.textContent =
+  name.textContent =
     tournament.name ||
-    "Untitled tournament";
+    "Unnamed tournament";
 
-  const tournamentLocation =
+  const location =
     document.createElement("p");
 
-  tournamentLocation.textContent =
-    "Location: " +
-    (tournament.location || "Not set");
+  location.textContent =
+    tournament.location ||
+    "Location not provided";
 
-  const tournamentStatus =
-    document.createElement("span");
+  const startDate =
+    document.createElement("p");
 
-  tournamentStatus.className = "card-tag";
-  tournamentStatus.textContent =
-    tournament.status || "draft";
+  startDate.textContent =
+    tournament.start_date
+      ? "Starts: " +
+        tournament.start_date
+      : "Start date not provided";
 
-  tournamentCard.appendChild(
-    tournamentName
-  );
+  card.appendChild(name);
+  card.appendChild(location);
+  card.appendChild(startDate);
 
-  tournamentCard.appendChild(
-    tournamentLocation
-  );
-
-  tournamentCard.appendChild(
-    tournamentStatus
-  );
-
-  if (tournament.description) {
-    const tournamentDescription =
-      document.createElement("p");
-
-    tournamentDescription.textContent =
-      tournament.description;
-
-    tournamentCard.appendChild(
-      tournamentDescription
-    );
-  }
-
-  return tournamentCard;
+  return card;
 }
 
+function showMessage(
+  container,
+  message
+) {
+  container.innerHTML = "";
+
+  const messageElement =
+    document.createElement("p");
+
+  messageElement.className =
+    "empty-message";
+
+  messageElement.textContent =
+    message;
+
+  container.appendChild(
+    messageElement
+  );
+}
 
 async function loadTeams() {
   try {
-    const { data, error } = await supabase
-      .from("teams")
-      .select(
-        "id, name, county, description, status"
-      )
-      .eq("status", "active")
-      .order("id", {
-        ascending: false
-      })
-      .limit(6);
+    const { data, error } =
+      await supabase
+        .from("teams")
+        .select("*")
+        .eq("status", "active")
+        .order("created_at", {
+          ascending: false
+        })
+        .limit(6);
 
     if (error) {
+      console.error(error);
+
       showMessage(
         teamsContainer,
-        "Could not load teams: " +
-        error.message
+        "Could not load teams."
       );
 
       return;
     }
-
-    teamsContainer.textContent = "";
 
     if (!data || data.length === 0) {
       showMessage(
         teamsContainer,
-        "No active teams available yet."
+        "No teams available yet."
       );
 
       return;
     }
 
-    data.forEach((team) => {
-      const teamCard =
-        createTeamCard(team);
+    teamsContainer.innerHTML = "";
 
+    data.forEach(function (team) {
       teamsContainer.appendChild(
-        teamCard
+        createTeamCard(team)
       );
     });
   } catch (error) {
+    console.error(error);
+
     showMessage(
       teamsContainer,
-      "Could not load teams: " +
-      (error?.message || String(error))
+      "Could not load teams."
     );
   }
 }
 
-
 async function loadTournaments() {
   try {
-    const { data, error } = await supabase
-      .from("tournaments")
-      .select(
-        "id, name, location, description, status"
-      )
-      .order("id", {
-        ascending: false
-      })
-      .limit(6);
+    const { data, error } =
+      await supabase
+        .from("tournaments")
+        .select("*")
+        .order("created_at", {
+          ascending: false
+        })
+        .limit(6);
 
     if (error) {
+      console.error(error);
+
       showMessage(
         tournamentsContainer,
-        "Could not load tournaments: " +
-        error.message
+        "Could not load tournaments."
       );
 
       return;
     }
 
-    tournamentsContainer.textContent = "";
-
-    if (!data || data.length === 0) {
+    if (
+      !data ||
+      data.length === 0
+    ) {
       showMessage(
         tournamentsContainer,
         "No tournaments available yet."
@@ -215,56 +190,69 @@ async function loadTournaments() {
       return;
     }
 
-    data.forEach((tournament) => {
-      const tournamentCard =
-        createTournamentCard(tournament);
+    tournamentsContainer.innerHTML =
+      "";
 
+    data.forEach(function (
+      tournament
+    ) {
       tournamentsContainer.appendChild(
-        tournamentCard
+        createTournamentCard(
+          tournament
+        )
       );
     });
-  } catch (error) {
-    showMessage(
-      tournamentsContainer,
-      "Could not load tournaments: " +
-      (error?.message || String(error))
-    );
-  }
-}
-
-
-async function initialiseHome() {
-  try {
-    const connection = await import(
-      "./config/supabase.js"
-    );
-
-    supabase = connection.supabase;
-
-    if (!supabase) {
-      throw new Error(
-        "Supabase connection is missing."
-      );
-    }
-
-    await loadTeams();
-    await loadTournaments();
   } catch (error) {
     console.error(error);
 
     showMessage(
-      teamsContainer,
-      "Could not load teams: " +
-      (error?.message || String(error))
-    );
-
-    showMessage(
       tournamentsContainer,
-      "Could not load tournaments: " +
-      (error?.message || String(error))
+      "Could not load tournaments."
     );
   }
 }
 
+async function signInWithGoogle() {
+  try {
+    const { error } =
+      await supabase.auth
+        .signInWithOAuth({
+          provider: "google",
+          options: {
+            redirectTo:
+              window.location.origin +
+              "/dashboard/home.html"
+          }
+        });
+
+    if (error) {
+      console.error(error);
+
+      alert(
+        "Could not sign in with Google: " +
+        error.message
+      );
+    }
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      "Could not sign in with Google."
+    );
+  }
+}
+
+async function initialiseHome() {
+  await loadTeams();
+
+  await loadTournaments();
+}
+
+if (googleSignInButton) {
+  googleSignInButton.addEventListener(
+    "click",
+    signInWithGoogle
+  );
+}
 
 initialiseHome();
