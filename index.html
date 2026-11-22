@@ -2,99 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turf Kenya | Football Tournaments, Teams and Fixtures</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Turf Kenya helps grassroots football organisers, teams and players connect."
-  >
-
-  <meta name="theme-color" content="#157347">
-
-  <title>Turf Kenya | Grassroots Football</title>
-
-  <link rel="stylesheet" href="css/account.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">
-    Skip to main content
-  </a>
+  <div class="video-background">
+    <iframe
+      src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&controls=0&loop=1&playlist=ScMzIvxBSi4&modestbranding=1&rel=0"
+      title="Football background video"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
 
-  <header class="account-header">
-    <div class="container">
-      <a
-        class="logo"
-        href="index.html"
-        aria-label="Turf Kenya home"
-      >
-        TURF <span>KENYA</span>
+  <div class="page-overlay"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">TK</span>
+
+        <span class="brand-name">
+          Turf Kenya
+        </span>
       </a>
 
-      <nav class="account-nav" aria-label="Account navigation">
-        <a href="auth/login.html">Sign in</a>
+      <nav class="site-nav">
+        <a href="index.html">
+          Home
+        </a>
 
-        <a
-          class="btn btn-primary btn-small"
-          href="auth/register.html"
-        >
-          Create account
+        <a href="auth/login.html">
+          Login
+        </a>
+
+        <a href="auth/register.html">
+          Register
         </a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" class="account-main">
-    <section class="account-card" aria-labelledby="page-title">
+  <main class="home-main">
+    <section class="hero">
+      <p class="hero-eyebrow">
+        Kenyan grassroots football
+      </p>
 
-      <div class="account-heading">
-        <p class="eyebrow">Grassroots football in Kenya</p>
+      <h1>
+        Play. Compete. Grow.
+      </h1>
 
-        <h1 id="page-title">
-          Organise tournaments.
-          Build teams.
-          Play football.
-        </h1>
+      <p class="hero-text">
+        Turf Kenya helps players, coaches, and tournament
+        organisers discover teams, join tournaments, view
+        fixtures, and follow local football across Kenya.
+      </p>
 
-        <p class="account-intro">
-          Turf Kenya is a simple platform for local football
-          organisers, team captains and players. Create
-          tournaments, manage teams and publish fixtures.
-        </p>
-      </div>
-
-      <div class="home-actions">
+      <div class="hero-actions">
         <a
-          class="btn btn-primary btn-block"
           href="auth/register.html"
+          class="btn btn-light"
         >
-          Create an account
+          Get started
         </a>
 
         <a
-          class="btn btn-outline btn-block"
           href="auth/login.html"
+          class="btn btn-outline"
         >
-          Sign in
+          Login
         </a>
       </div>
+    </section>
 
-      <div class="account-note">
-        <h2>Who it is for</h2>
+    <section class="home-content">
+      <section class="home-column">
+        <div class="column-heading">
+          <h2>
+            Available teams
+          </h2>
 
-        <p>
-          Organisers can create tournaments and approve teams.
-          Captains can create teams and apply to tournaments.
-          Players can join teams as the platform grows.
-        </p>
-      </div>
+          <p>
+            Discover active football teams across Kenya.
+          </p>
+        </div>
 
+        <div
+          id="teams-container"
+          class="cards-container"
+        >
+          <p class="loading-text">
+            Loading teams...
+          </p>
+        </div>
+      </section>
+
+      <section class="home-column">
+        <div class="column-heading">
+          <h2>
+            Available tournaments
+          </h2>
+
+          <p>
+            Find tournaments open for teams and players.
+          </p>
+        </div>
+
+        <div
+          id="tournaments-container"
+          class="cards-container"
+        >
+          <p class="loading-text">
+            Loading tournaments...
+          </p>
+        </div>
+      </section>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>
+      © Turf Kenya. Building grassroots football.
+    </p>
+  </footer>
+
+  <script type="module" src="js/public-home.js"></script>
 </body>
 </html>
