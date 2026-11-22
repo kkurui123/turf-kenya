@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Tournament | Turf Kenya</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/dashboard.css"
+  >
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+      <button
+        type="button"
+        id="menu-button"
+        class="menu-button"
+        aria-expanded="false"
+        aria-controls="dashboard-menu"
+        aria-label="Open dashboard menu"
+      >
+        <span class="menu-icon"></span>
+      </button>
+
+      <div class="profile-menu">
+        <button
+          type="button"
+          id="profile-button"
+          class="profile-button"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+        >
+          <span class="profile-avatar">TK</span>
+
+          <span class="profile-name">Profile</span>
+        </button>
+
+        <div
+          id="profile-dropdown"
+          class="profile-dropdown"
+          hidden
+        >
+          <a href="home.html">
+            Dashboard
+          </a>
+
+          <a href="profile.html">
+            My profile
+          </a>
+
+          <a href="edit-profile.html">
+            Edit profile
+          </a>
+
+          <button
+            type="button"
+            id="sign-out-button"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      id="dashboard-menu"
+      class="dashboard-menu"
+      hidden
+    >
+      <a href="home.html">
+        Dashboard
+      </a>
+
+      <a href="tournaments.html">
+        Tournaments
+      </a>
+
+      <a href="teams.html">
+        Teams
+      </a>
+
+      <a
+        id="register-team-link"
+        href="register-team.html"
+      >
+        Register team
+      </a>
+
+      <a href="fixtures.html">
+        Fixtures
+      </a>
+
+      <a href="results.html">
+        Results
+      </a>
+
+      <a href="profile.html">
+        My profile
+      </a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-container">
+      <section class="dashboard-heading">
+        <p class="eyebrow">
+          Tournament organiser
+        </p>
+
+        <h1>
+          Create tournament
+        </h1>
+
+        <p>
+          Create a football tournament and choose how many teams
+          can register and which counties can take part.
+        </p>
+      </section>
+
+      <div
+        id="create-tournament-message"
+        class="account-message"
+        hidden
+      >
+      </div>
+
+      <form
+        id="create-tournament-form"
+        class="account-form"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="tournament-name">
+            Tournament name
+          </label>
+
+          <input
+            type="text"
+            id="tournament-name"
+            name="tournament-name"
+            required
+            maxlength="120"
+            placeholder="For example: Nairobi County Cup"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="tournament-description">
+            Tournament description
+          </label>
+
+          <textarea
+            id="tournament-description"
+            name="tournament-description"
+            rows="4"
+            maxlength="1000"
+            placeholder="Explain the tournament, rules, prizes, or important information"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tournament-location">
+            Location
+          </label>
+
+          <input
+            type="text"
+            id="tournament-location"
+            name="tournament-location"
+            required
+            maxlength="120"
+            placeholder="For example: Nairobi"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="tournament-start-date">
+            Start date
+          </label>
+
+          <input
+            type="date"
+            id="tournament-start-date"
+            name="tournament-start-date"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="tournament-end-date">
+            End date
+          </label>
+
+          <input
+            type="date"
+            id="tournament-end-date"
+            name="tournament-end-date"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="max-teams">
+            Number of teams that can register
+          </label>
+
+          <input
+            type="number"
+            id="max-teams"
+            name="max-teams"
+            min="2"
+            max="128"
+            step="1"
+            required
+            placeholder="For example: 16"
+          >
+
+          <p class="form-help">
+            Enter the maximum number of teams allowed
+            in this tournament.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="allowed-counties">
+            Counties allowed to register
+          </label>
+
+          <select
+            id="allowed-counties"
+            name="allowed-counties"
+            multiple
+            required
+            size="10"
+          >
+            <option value="all-counties">
+              All counties
+            </option>
+
+            <option value="Bomet">
+              Bomet
+            </option>
+
+            <option value="Bungoma">
+              Bungoma
+            </option>
+
+            <option value="Busia">
+              Busia
+            </option>
+
+            <option value="Elgeyo Marakwet">
+              Elgeyo Marakwet
+            </option>
+
+            <option value="Embu">
+              Embu
+            </option>
+
+            <option value="Garissa">
+              Garissa
+            </option>
+
+            <option value="Homa Bay">
+              Homa Bay
+            </option>
+
+            <option value="Isiolo">
+              Isiolo
+            </option>
+
+            <option value="Kajiado">
+              Kajiado
+            </option>
+
+            <option value="Kakamega">
+              Kakamega
+            </option>
+
+            <option value="Kericho">
+              Kericho
+            </option>
+
+            <option value="Kiambu">
+              Kiambu
+            </option>
+
+            <option value="Kilifi">
+              Kilifi
+            </option>
+
+            <option value="Kirinyaga">
+              Kirinyaga
+            </option>
+
+            <option value="Kisii">
+              Kisii
+            </option>
+
+            <option value="Kisumu">
+              Kisumu
+            </option>
+
+            <option value="Kitui">
+              Kitui
+            </option>
+
+            <option value="Kwale">
+              Kwale
+            </option>
+
+            <option value="Laikipia">
+              Laikipia
+            </option>
+
+            <option value="Lamu">
+              Lamu
+            </option>
+
+            <option value="Machakos">
+              Machakos
+            </option>
+
+            <option value="Makueni">
+              Makueni
+            </option>
+
+            <option value="Mandera">
+              Mandera
+            </option>
+
+            <option value="Marsabit">
+              Marsabit
+            </option>
+
+            <option value="Meru">
+              Meru
+            </option>
+
+            <option value="Migori">
+              Migori
+            </option>
+
+            <option value="Mombasa">
+              Mombasa
+            </option>
+
+            <option value="Murang'a">
+              Murang'a
+            </option>
+
+            <option value="Nairobi">
+              Nairobi
+            </option>
+
+            <option value="Nakuru">
+              Nakuru
+            </option>
+
+            <option value="Nandi">
+              Nandi
+            </option>
+
+            <option value="Narok">
+              Narok
+            </option>
+
+            <option value="Nyamira">
+              Nyamira
+            </option>
+
+            <option value="Nyandarua">
+              Nyandarua
+            </option>
+
+            <option value="Nyeri">
+              Nyeri
+            </option>
+
+            <option value="Samburu">
+              Samburu
+            </option>
+
+            <option value="Siaya">
+              Siaya
+            </option>
+
+            <option value="Taita Taveta">
+              Taita Taveta
+            </option>
+
+            <option value="Tana River">
+              Tana River
+            </option>
+
+            <option value="Tharaka Nithi">
+              Tharaka Nithi
+            </option>
+
+            <option value="Trans Nzoia">
+              Trans Nzoia
+            </option>
+
+            <option value="Turkana">
+              Turkana
+            </option>
+
+            <option value="Uasin Gishu">
+              Uasin Gishu
+            </option>
+
+            <option value="Vihiga">
+              Vihiga
+            </option>
+
+            <option value="Wajir">
+              Wajir
+            </option>
+
+            <option value="West Pokot">
+              West Pokot
+            </option>
+          </select>
+
+          <p class="form-help">
+            Hold Ctrl on Windows or Command on Mac to select
+            more than one county.
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          id="create-tournament-button"
+          class="btn btn-primary btn-block"
+        >
+          Create tournament
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+  <script type="module" src="../js/create-tournament.js"></script>
+</body>
+</html>

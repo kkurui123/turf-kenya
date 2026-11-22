@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Team | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/register-team.css">
+
+  <script type="module" src="../js/register-team.js"></script>
+</head>
+
+<body class="register-team-page">
+  <header class="register-team-header">
+    <div class="register-team-header-inner">
+      <a
+        class="register-team-logo"
+        href="home.html"
+      >
+        TURF <span>KENYA</span>
+      </a>
+
+      <nav class="register-team-nav">
+        <a href="home.html">
+          Dashboard
+        </a>
+
+        <a href="tournaments.html">
+          Tournaments
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="profile.html">
+          My profile
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="register-team-main">
+    <section class="register-team-heading">
+      <p class="register-team-eyebrow">
+        Team registration
+      </p>
+
+      <h1>
+        Register a team
+      </h1>
+
+      <p>
+        Create your football team and add it to
+        Turf Kenya.
+      </p>
+    </section>
+
+    <section class="register-team-card">
+      <div
+        id="register-team-message"
+        class="register-team-message"
+        hidden
+      >
+      </div>
+
+      <form
+        id="register-team-form"
+        class="register-team-form"
+      >
+        <div class="register-team-field">
+          <label for="team-name">
+            Team name
+          </label>
+
+          <input
+            type="text"
+            id="team-name"
+            name="team-name"
+            required
+            maxlength="100"
+            placeholder="Enter your team name"
+          >
+        </div>
+
+        <div class="register-team-field">
+          <label for="team-county">
+            County
+          </label>
+
+          <select
+            id="team-county"
+            name="team-county"
+            required
+          >
+            <option value="">
+              Choose your county
+            </option>
+
+            <option value="Baringo">
+              Baringo
+            </option>
+
+            <option value="Bomet">
+              Bomet
+            </option>
+
+            <option value="Bungoma">
+              Bungoma
+            </option>
+
+            <option value="Busia">
+              Busia
+            </option>
+
+            <option value="Elgeyo Marakwet">
+              Elgeyo Marakwet
+            </option>
+
+            <option value="Embu">
+              Embu
+            </option>
+
+            <option value="Garissa">
+              Garissa
+            </option>
+
+            <option value="Homa Bay">
+              Homa Bay
+            </option>
+
+            <option value="Isiolo">
+              Isiolo
+            </option>
+
+            <option value="Kajiado">
+              Kajiado
+            </option>
+
+            <option value="Kakamega">
+              Kakamega
+            </option>
+
+            <option value="Kericho">
+              Kericho
+            </option>
+
+            <option value="Kiambu">
+              Kiambu
+            </option>
+
+            <option value="Kilifi">
+              Kilifi
+            </option>
+
+            <option value="Kirinyaga">
+              Kirinyaga
+            </option>
+
+            <option value="Kisii">
+              Kisii
+            </option>
+
+            <option value="Kisumu">
+              Kisumu
+            </option>
+
+            <option value="Kitui">
+              Kitui
+            </option>
+
+            <option value="Kwale">
+              Kwale
+            </option>
+
+            <option value="Laikipia">
+              Laikipia
+            </option>
+
+            <option value="Lamu">
+              Lamu
+            </option>
+
+            <option value="Machakos">
+              Machakos
+            </option>
+
+            <option value="Makueni">
+              Makueni
+            </option>
+
+            <option value="Mandera">
+              Mandera
+            </option>
+
+            <option value="Marsabit">
+              Marsabit
+            </option>
+
+            <option value="Meru">
+              Meru
+            </option>
+
+            <option value="Migori">
+              Migori
+            </option>
+
+            <option value="Mombasa">
+              Mombasa
+            </option>
+
+            <option value="Murang'a">
+              Murang'a
+            </option>
+
+            <option value="Nairobi">
+              Nairobi
+            </option>
+
+            <option value="Nakuru">
+              Nakuru
+            </option>
+
+            <option value="Nandi">
+              Nandi
+            </option>
+
+            <option value="Narok">
+              Narok
+            </option>
+
+            <option value="Nyamira">
+              Nyamira
+            </option>
+
+            <option value="Nyandarua">
+              Nyandarua
+            </option>
+
+            <option value="Nyeri">
+              Nyeri
+            </option>
+
+            <option value="Samburu">
+              Samburu
+            </option>
+
+            <option value="Siaya">
+              Siaya
+            </option>
+
+            <option value="Taita Taveta">
+              Taita Taveta
+            </option>
+
+            <option value="Tana River">
+              Tana River
+            </option>
+
+            <option value="Tharaka Nithi">
+              Tharaka Nithi
+            </option>
+
+            <option value="Trans Nzoia">
+              Trans Nzoia
+            </option>
+
+            <option value="Turkana">
+              Turkana
+            </option>
+
+            <option value="Uasin Gishu">
+              Uasin Gishu
+            </option>
+
+            <option value="Vihiga">
+              Vihiga
+            </option>
+
+            <option value="Wajir">
+              Wajir
+            </option>
+
+            <option value="West Pokot">
+              West Pokot
+            </option>
+          </select>
+        </div>
+
+        <div class="register-team-field">
+          <label for="team-description">
+            Team description
+          </label>
+
+          <textarea
+            id="team-description"
+            name="team-description"
+            rows="4"
+            maxlength="500"
+            placeholder="Describe your team"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          id="register-team-button"
+          class="register-team-button"
+        >
+          Register team
+        </button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

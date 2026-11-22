@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Your Turf Kenya football dashboard."
+  >
+
+  <meta name="theme-color" content="#157347">
+
+  <title>Dashboard | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/account.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+
+  <script type="module" src="../js/home.js"></script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
+
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+
+      <button
+        id="menu-button"
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="dashboard-menu"
+        aria-label="Open dashboard menu"
+      >
+        <span class="menu-icon" aria-hidden="true"></span>
+
+        <span class="visually-hidden">
+          Open dashboard menu
+        </span>
+      </button>
+
+      <a
+        class="logo"
+        href="home.html"
+        aria-label="Turf Kenya dashboard"
+      >
+        TURF <span>KENYA</span>
+      </a>
+
+      <div class="profile-menu">
+        <button
+          id="profile-button"
+          class="profile-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+          aria-haspopup="true"
+        >
+          <span class="profile-avatar" aria-hidden="true">TK</span>
+
+          <span class="profile-name">Profile</span>
+        </button>
+
+        <div
+          id="profile-dropdown"
+          class="profile-dropdown"
+          hidden
+        >
+          <a href="profile.html">My profile</a>
+
+          <a href="edit-profile.html">Edit profile</a>
+
+          <button
+            id="sign-out-button"
+            type="button"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <nav
+      id="dashboard-menu"
+      class="dashboard-menu"
+      aria-label="Dashboard navigation"
+      hidden
+    >
+      <a href="home.html">Dashboard</a>
+
+      <a href="tournaments.html">Tournaments</a>
+
+      <a href="teams.html">Teams</a>
+
+      <a
+        id="register-team-link"
+        href="register-team.html"
+      >
+        Register team
+      </a>
+
+      <a href="fixtures.html">Fixtures</a>
+
+      <a href="results.html">Results</a>
+    </nav>
+  </header>
+
+  <main id="main-content" class="dashboard-main">
+    <div class="dashboard-container">
+
+      <section
+        class="dashboard-heading"
+        aria-labelledby="dashboard-title"
+      >
+        <p class="eyebrow">Turf Kenya</p>
+
+        <h1 id="dashboard-title">Football dashboard</h1>
+
+        <p>
+          View tournaments, join teams, manage your team,
+          or create tournaments.
+        </p>
+      </section>
+
+      <section
+        class="dashboard-cards"
+        aria-label="Dashboard actions"
+      >
+        <article class="dashboard-card">
+          <h2>Tournaments</h2>
+
+          <p>
+            View football tournaments, read comments,
+            and follow tournament updates.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="tournaments.html"
+          >
+            View tournaments
+          </a>
+        </article>
+
+        <article class="dashboard-card">
+          <h2>Teams</h2>
+
+          <p>
+            View teams, join a team as a player,
+            or manage your team as a coach.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="teams.html"
+          >
+            View teams
+          </a>
+        </article>
+
+        <article
+          id="register-team-card"
+          class="dashboard-card"
+          hidden
+        >
+          <h2>Register team</h2>
+
+          <p>
+            Coaches can register a team and later
+            enter it into tournaments.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="register-team.html"
+          >
+            Register team
+          </a>
+        </article>
+
+        <article
+          id="create-tournament-card"
+          class="dashboard-card"
+          hidden
+        >
+          <h2>Create tournament</h2>
+
+          <p>
+            Tournament organisers can create tournaments,
+            set team limits, and choose allowed counties.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="create-tournament.html"
+          >
+            Create tournament
+          </a>
+        </article>
+
+        <article class="dashboard-card">
+          <h2>Fixtures</h2>
+
+          <p>
+            View match fixtures and tournament schedules.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="fixtures.html"
+          >
+            View fixtures
+          </a>
+        </article>
+
+        <article class="dashboard-card">
+          <h2>Results</h2>
+
+          <p>
+            Follow match results and tournament progress.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="results.html"
+          >
+            View results
+          </a>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+</body>
+</html>

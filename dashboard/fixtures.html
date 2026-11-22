@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixtures | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+      <button
+        type="button"
+        id="menu-button"
+        class="menu-button"
+        aria-expanded="false"
+        aria-controls="dashboard-menu"
+        aria-label="Open dashboard menu"
+      >
+        <span class="menu-icon"></span>
+      </button>
+
+      <div class="profile-menu">
+        <button
+          type="button"
+          id="profile-button"
+          class="profile-button"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+        >
+          <span class="profile-avatar">TK</span>
+
+          <span class="profile-name">Profile</span>
+        </button>
+
+        <div
+          id="profile-dropdown"
+          class="profile-dropdown"
+          hidden
+        >
+          <a href="home.html">
+            Dashboard
+          </a>
+
+          <a href="profile.html">
+            My profile
+          </a>
+
+          <a href="edit-profile.html">
+            Edit profile
+          </a>
+
+          <button
+            type="button"
+            id="sign-out-button"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      id="dashboard-menu"
+      class="dashboard-menu"
+      hidden
+    >
+      <a href="home.html">
+        Dashboard
+      </a>
+
+      <a href="tournaments.html">
+        Tournaments
+      </a>
+
+      <a href="teams.html">
+        Teams
+      </a>
+
+      <a
+        id="register-team-link"
+        href="register-team.html"
+      >
+        Register team
+      </a>
+
+      <a href="fixtures.html">
+        Fixtures
+      </a>
+
+      <a href="results.html">
+        Results
+      </a>
+
+      <a href="profile.html">
+        My profile
+      </a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-container">
+      <section class="dashboard-heading">
+        <p class="eyebrow">
+          Matches
+        </p>
+
+        <h1>
+          Fixtures
+        </h1>
+
+        <p>
+          View tournament fixtures, see matches in
+          Pool A, Pool B, and other pools, and manage
+          fixtures for tournaments you created.
+        </p>
+      </section>
+
+      <div
+        id="fixtures-message"
+        class="account-message"
+        hidden
+      >
+      </div>
+
+      <section
+        id="create-fixture-section"
+        class="dashboard-cards"
+        hidden
+      >
+        <div class="dashboard-card">
+          <h2>
+            Create fixture
+          </h2>
+
+          <p>
+            Create a match between two teams in one of
+            your tournaments and assign it to a pool.
+          </p>
+
+          <a
+            href="create-fixture.html"
+            class="btn btn-primary"
+          >
+            Create fixture
+          </a>
+        </div>
+      </section>
+
+      <section class="fixtures-list">
+        <div
+          id="fixtures-container"
+          class="fixtures-container"
+        >
+          <p>
+            Loading tournaments...
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+  <script type="module" src="../js/fixtures.js"></script>
+</body>
+</html>

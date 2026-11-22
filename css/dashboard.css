@@ -1,0 +1,754 @@
+/* =========================================
+   Turf Kenya — Dashboard styles
+   ========================================= */
+
+:root {
+  --turf-green: #157347;
+  --turf-green-dark: #0f5132;
+  --turf-light: #f8faf9;
+  --turf-border: #e5e7eb;
+  --turf-text: #111827;
+  --turf-muted: #4b5563;
+  --turf-error: #b91c1c;
+  --turf-success: #166534;
+  --turf-radius: 0.75rem;
+}
+
+/* =========================================
+   Dashboard layout
+   ========================================= */
+
+.dashboard-main {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  background: var(--turf-light);
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dashboard-heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboard-heading .eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--turf-green);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dashboard-heading h1 {
+  margin: 0 0 0.75rem;
+  color: var(--turf-text);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.dashboard-heading p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--turf-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Dashboard header
+   ========================================= */
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid var(--turf-border);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+}
+
+.dashboard-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+/* Hamburger button */
+
+.menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--turf-border);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--turf-text);
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+.menu-icon {
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -6px;
+}
+
+.menu-icon::after {
+  top: 6px;
+}
+
+.menu-button[aria-expanded="true"] .menu-icon {
+  background: transparent;
+}
+
+.menu-button[aria-expanded="true"] .menu-icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] .menu-icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Dashboard navigation */
+
+.dashboard-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem 1rem;
+  border-top: 1px solid var(--turf-border);
+  background: #ffffff;
+}
+
+.dashboard-menu a {
+  display: block;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.5rem;
+  color: var(--turf-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dashboard-menu a:hover,
+.dashboard-menu a:focus-visible {
+  background: var(--turf-light);
+  color: var(--turf-green);
+}
+
+/* Profile menu */
+
+.profile-menu {
+  position: relative;
+}
+
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+  border: 1px solid var(--turf-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--turf-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-button:hover,
+.profile-button:focus-visible {
+  border-color: var(--turf-green);
+  color: var(--turf-green);
+}
+
+.profile-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--turf-green);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 190px;
+  padding: 0.5rem;
+  border: 1px solid var(--turf-border);
+  border-radius: 0.65rem;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--turf-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown a:focus-visible,
+.profile-dropdown button:hover,
+.profile-dropdown button:focus-visible {
+  background: var(--turf-light);
+  color: var(--turf-green);
+}
+
+/* =========================================
+   Forms
+   ========================================= */
+
+.account-form {
+  padding: 1.5rem;
+  border: 1px solid var(--turf-border);
+  border-radius: var(--turf-radius);
+  background: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--turf-text);
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--turf-border);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: var(--turf-text);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--turf-green);
+  outline: 2px solid rgba(21, 115, 71, 0.25);
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.form-group select:focus-visible {
+  outline: 2px solid var(--turf-green);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-help {
+  margin: 0.5rem 0 0;
+  color: var(--turf-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* County multi-select */
+
+.form-group select[multiple] {
+  min-height: 180px;
+  padding: 0.5rem;
+}
+
+.form-group select[multiple] option {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.35rem;
+}
+
+.form-group select[multiple] option:checked {
+  background: var(--turf-green);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* =========================================
+   Profile details
+   ========================================= */
+
+.profile-details {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--turf-border);
+  border-radius: var(--turf-radius);
+  background: #ffffff;
+}
+
+.profile-details h2 {
+  margin: 0 0 1rem;
+  color: var(--turf-text);
+  font-size: 1.35rem;
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--turf-border);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  min-width: 160px;
+  color: var(--turf-muted);
+  font-weight: 600;
+}
+
+.detail-value {
+  color: var(--turf-text);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* =========================================
+   Edit profile roles
+   ========================================= */
+
+.roles-fieldset {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--turf-border);
+  border-radius: var(--turf-radius);
+}
+
+.roles-fieldset legend {
+  padding: 0 0.5rem;
+  color: var(--turf-text);
+  font-weight: 700;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--turf-border);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.role-option:hover,
+.role-option:focus-within {
+  border-color: var(--turf-green);
+}
+
+.role-option input[type="radio"],
+.role-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--turf-green);
+}
+
+.role-option span {
+  font-weight: 600;
+  color: var(--turf-text);
+}
+
+/* =========================================
+   Home actions
+   ========================================= */
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.home-actions .btn {
+  flex: 1 1 auto;
+  min-width: 180px;
+}
+
+/* =========================================
+   Dashboard cards
+   ========================================= */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--turf-border);
+  border-radius: var(--turf-radius);
+  background: #ffffff;
+}
+
+.dashboard-card h2 {
+  margin: 0;
+  color: var(--turf-text);
+  font-size: 1.25rem;
+}
+
+.dashboard-card p {
+  margin: 0;
+  color: var(--turf-muted);
+  line-height: 1.55;
+}
+
+.dashboard-card .btn {
+  margin-top: auto;
+}
+
+/* =========================================
+   Tournament list
+   ========================================= */
+
+.tournaments-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.tournament-card {
+  padding: 1.25rem;
+  border: 1px solid var(--turf-border);
+  border-radius: var(--turf-radius);
+  background: #ffffff;
+}
+
+.tournament-card h2 {
+  margin: 0 0 0.5rem;
+  color: var(--turf-text);
+  font-size: 1.25rem;
+}
+
+.tournament-status {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: var(--turf-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.tournament-card p {
+  margin: 0.25rem 0;
+  color: var(--turf-muted);
+  line-height: 1.5;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--turf-green);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--turf-green-dark);
+}
+
+.btn-primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* =========================================
+   Messages
+   ========================================= */
+
+.account-message {
+  margin-bottom: 1.5rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.account-message[data-type="error"] {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: var(--turf-error);
+}
+
+.account-message[data-type="success"] {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: var(--turf-success);
+}
+
+/* =========================================
+   Screen-reader-only text
+   ========================================= */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================
+   Small screens
+   ========================================= */
+
+@media (max-width: 640px) {
+  .dashboard-main {
+    padding: 1.5rem 0.75rem 3rem;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 1.65rem;
+  }
+
+  .dashboard-header-inner {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .profile-name {
+    display: none;
+  }
+
+  .dashboard-menu {
+    flex-direction: column;
+  }
+
+  .dashboard-menu a {
+    width: 100%;
+  }
+
+  .profile-dropdown {
+    right: -0.25rem;
+  }
+
+  .account-form {
+    padding: 1rem;
+  }
+
+  .profile-details {
+    padding: 1rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detail-label {
+    min-width: 0;
+  }
+
+  .home-actions {
+    flex-direction: column;
+  }
+
+  .home-actions .btn {
+    width: 100%;
+  }
+
+  .form-group select[multiple] {
+    min-height: 220px;
+  }
+}
+/* Fixtures page */
+.fixtures-list {
+  margin-top: 30px;
+}
+
+.fixtures-container {
+  display: grid;
+  gap: 16px;
+}
+
+.tournament-card {
+  padding: 22px;
+  border: 1px solid #dcebe4;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 55, 40, 0.05);
+}
+
+.tournament-card h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #123d29;
+}
+
+.tournament-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #e8f5ee;
+  color: #157347;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tournament-card p {
+  margin: 6px 0;
+  color: #4c6a5c;
+}
+
+.fixture-card {
+  padding: 20px;
+  border: 1px solid #dcebe4;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 55, 40, 0.05);
+}
+
+.fixture-pool {
+  font-size: 13px;
+  font-weight: 800;
+  color: #157347;
+}
+
+.fixture-card h3 {
+  margin: 8px 0;
+  font-size: 18px;
+  color: #123d29;
+}
+
+.fixture-card p {
+  margin: 5px 0;
+  color: #4c6a5c;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+/* Create fixture page */
+.account-form {
+  display: grid;
+  gap: 14px;
+  max-width: 520px;
+  padding: 24px;
+  border: 1px solid #dcebe4;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 55, 40, 0.05);
+}
+
+.account-form label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #123d29;
+}
+
+.account-form select,
+.account-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfe0d7;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #123d29;
+  background: #f8fbf9;
+}
+
+.account-form select:focus,
+.account-form input:focus {
+  outline: 2px solid #157347;
+  outline-offset: 2px;
+}
+
+.account-form button {
+  margin-top: 8px;
+}

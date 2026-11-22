@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile | Turf Kenya</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/dashboard.css"
+  >
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+      <button
+        type="button"
+        id="menu-button"
+        class="menu-button"
+        aria-expanded="false"
+        aria-controls="dashboard-menu"
+        aria-label="Open dashboard menu"
+      >
+        <span class="menu-icon"></span>
+      </button>
+
+      <div class="profile-menu">
+        <button
+          type="button"
+          id="profile-button"
+          class="profile-button"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+        >
+          <span class="profile-avatar">TK</span>
+
+          <span class="profile-name">Profile</span>
+        </button>
+
+        <div
+          id="profile-dropdown"
+          class="profile-dropdown"
+          hidden
+        >
+          <a href="home.html">
+            Dashboard
+          </a>
+
+          <a href="profile.html">
+            My profile
+          </a>
+
+          <a href="edit-profile.html">
+            Edit profile
+          </a>
+
+          <button
+            type="button"
+            id="sign-out-button"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      id="dashboard-menu"
+      class="dashboard-menu"
+      hidden
+    >
+      <a href="home.html">
+        Dashboard
+      </a>
+
+      <a href="tournaments.html">
+        Tournaments
+      </a>
+
+      <a href="teams.html">
+        Teams
+      </a>
+
+      <a
+        id="register-team-link"
+        href="register-team.html"
+      >
+        Register team
+      </a>
+
+      <a href="fixtures.html">
+        Fixtures
+      </a>
+
+      <a href="results.html">
+        Results
+      </a>
+
+      <a href="profile.html">
+        My profile
+      </a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-container">
+      <section class="dashboard-heading">
+        <p class="eyebrow">
+          My account
+        </p>
+
+        <h1>
+          Edit profile
+        </h1>
+
+        <p>
+          Update your football profile. Your role cannot be changed.
+        </p>
+      </section>
+
+      <div
+        id="edit-profile-message"
+        class="account-message"
+        hidden
+      >
+      </div>
+
+      <form
+        id="edit-profile-form"
+        class="account-form"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="full-name">
+            Full name
+          </label>
+
+          <input
+            type="text"
+            id="full-name"
+            name="full-name"
+            required
+            maxlength="120"
+            placeholder="Enter your full name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="county">
+            County
+          </label>
+
+          <input
+            type="text"
+            id="county"
+            name="county"
+            required
+            maxlength="80"
+            placeholder="For example: Nairobi"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">
+            Phone number
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            maxlength="20"
+            placeholder="For example: 0712 345 678"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="current-role">
+            Your role
+          </label>
+
+          <input
+            type="text"
+            id="current-role"
+            name="current-role"
+            readonly
+          >
+
+          <p class="form-help">
+            Your role was selected when you created your account
+            and cannot be changed.
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          id="save-profile-button"
+          class="btn btn-primary btn-block"
+          disabled
+        >
+          Save profile
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+  <script type="module" src="../js/edit-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Fixture | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/create-fixture.css">
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+      <button
+        type="button"
+        id="menu-button"
+        class="menu-button"
+        aria-expanded="false"
+        aria-controls="dashboard-menu"
+        aria-label="Open dashboard menu"
+      >
+        <span class="menu-icon"></span>
+      </button>
+
+      <div class="profile-menu">
+        <button
+          type="button"
+          id="profile-button"
+          class="profile-button"
+          aria-expanded="false"
+          aria-controls="profile-dropdown"
+        >
+          <span class="profile-avatar">TK</span>
+
+          <span class="profile-name">Profile</span>
+        </button>
+
+        <div
+          id="profile-dropdown"
+          class="profile-dropdown"
+          hidden
+        >
+          <a href="home.html">
+            Dashboard
+          </a>
+
+          <a href="profile.html">
+            My profile
+          </a>
+
+          <a href="edit-profile.html">
+            Edit profile
+          </a>
+
+          <button
+            type="button"
+            id="sign-out-button"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      id="dashboard-menu"
+      class="dashboard-menu"
+      hidden
+    >
+      <a href="home.html">
+        Dashboard
+      </a>
+
+      <a href="tournaments.html">
+        Tournaments
+      </a>
+
+      <a href="teams.html">
+        Teams
+      </a>
+
+      <a
+        id="register-team-link"
+        href="register-team.html"
+      >
+        Register team
+      </a>
+
+      <a href="fixtures.html">
+        Fixtures
+      </a>
+
+      <a href="results.html">
+        Results
+      </a>
+
+      <a href="profile.html">
+        My profile
+      </a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-container">
+      <section class="dashboard-heading">
+        <p class="eyebrow">
+          Fixtures
+        </p>
+
+        <h1>
+          Create fixture
+        </h1>
+
+        <p>
+          Create a match between two teams in one of
+          your tournaments and assign it to a pool.
+        </p>
+      </section>
+
+      <div
+        id="create-fixture-message"
+        class="account-message"
+        hidden
+      >
+      </div>
+
+      <form
+        id="create-fixture-form"
+        class="account-form"
+      >
+        <label for="tournament-select">
+          Tournament
+        </label>
+
+        <select
+          id="tournament-select"
+          required
+        >
+          <option value="">
+            Loading your tournaments...
+          </option>
+        </select>
+
+        <label for="home-team-select">
+          Home team
+        </label>
+
+        <select
+          id="home-team-select"
+          required
+          disabled
+        >
+          <option value="">
+            Choose a tournament first
+          </option>
+        </select>
+
+        <label for="away-team-select">
+          Away team
+        </label>
+
+        <select
+          id="away-team-select"
+          required
+          disabled
+        >
+          <option value="">
+            Choose a tournament first
+          </option>
+        </select>
+
+        <label for="pool-select">
+          Pool
+        </label>
+
+        <select
+          id="pool-select"
+          required
+        >
+          <option value="A">
+            Pool A
+          </option>
+
+          <option value="B">
+            Pool B
+          </option>
+
+          <option value="C">
+            Pool C
+          </option>
+
+          <option value="D">
+            Pool D
+          </option>
+
+          <option value="E">
+            Pool E
+          </option>
+
+          <option value="F">
+            Pool F
+          </option>
+
+          <option value="G">
+            Pool G
+          </option>
+
+          <option value="H">
+            Pool H
+          </option>
+        </select>
+
+        <label for="match-date">
+          Match date and time
+        </label>
+
+        <input
+          type="datetime-local"
+          id="match-date"
+          required
+        >
+
+        <label for="venue">
+          Venue
+        </label>
+
+        <input
+          type="text"
+          id="venue"
+          placeholder="For example: Nairobi Stadium"
+          required
+        >
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Create fixture
+        </button>
+      </form>
+
+      <a
+        href="fixtures.html"
+        class="btn btn-primary"
+      >
+        Back to fixtures
+      </a>
+    </div>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+  <script type="module" src="../js/create-fixture.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+
+  <meta
+    name="description"
+    content="Create your Turf Kenya account."
+  >
+
+
+  <meta name="theme-color" content="#157347">
+
+
+  <title>Create Account | Turf Kenya</title>
+
+
+  <link rel="stylesheet" href="../css/account.css">
+
+
+  <script type="module" src="../js/register.js"></script>
+</head>
+
+
+<body>
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
+
+
+  <header class="account-header">
+    <div class="container">
+      <a
+        class="logo"
+        href="../index.html"
+        aria-label="Turf Kenya home"
+      >
+        TURF <span>KENYA</span>
+      </a>
+    </div>
+  </header>
+
+
+  <main id="main-content" class="account-main">
+    <section class="account-card" aria-labelledby="page-title">
+
+
+      <div class="account-heading">
+        <p class="eyebrow">Join the football community</p>
+
+
+        <h1 id="page-title">Create your account</h1>
+
+
+        <p class="account-intro">
+          Choose one role. Your role cannot be changed after registration.
+        </p>
+      </div>
+
+
+      <noscript>
+        <p class="account-message">
+          JavaScript is required to create an account.
+          Please enable it in your browser.
+        </p>
+      </noscript>
+
+
+      <div
+        id="register-message"
+        class="account-message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        hidden
+      ></div>
+
+
+      <form id="register-form">
+
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            autocapitalize="none"
+            spellcheck="false"
+            maxlength="254"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="password">Password</label>
+
+
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            minlength="12"
+            maxlength="128"
+            aria-describedby="password-help"
+            required
+          >
+
+
+          <p id="password-help" class="form-help">
+            Use at least 12 characters.
+          </p>
+        </div>
+
+
+        <div class="form-group">
+          <label for="confirm-password">
+            Confirm password
+          </label>
+
+
+          <input
+            id="confirm-password"
+            name="confirm_password"
+            type="password"
+            autocomplete="new-password"
+            minlength="12"
+            maxlength="128"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="role">
+            Choose your role
+          </label>
+
+
+          <select
+            id="role"
+            name="role"
+            required
+          >
+            <option value="">
+              Choose a role
+            </option>
+
+
+            <option value="player">
+              Player
+            </option>
+
+
+            <option value="coach">
+              Coach
+            </option>
+
+
+            <option value="tournament_organiser">
+              Tournament organiser
+            </option>
+          </select>
+
+
+          <p class="form-help">
+            Coaches must register a team immediately after creating an account.
+          </p>
+        </div>
+
+
+        <button
+          id="register-button"
+          class="btn btn-primary btn-block"
+          type="submit"
+          disabled
+        >
+          Create account
+        </button>
+
+
+        <p class="form-help">
+          Account creation becomes available when the page
+          finishes loading its registration script.
+        </p>
+
+
+      </form>
+
+
+      <p class="account-switch">
+        Already have an account?
+        <a href="login.html">Sign in</a>
+      </p>
+
+
+      <div class="account-note">
+        <h2>What happens next?</h2>
+
+
+        <ol>
+          <li>Confirm your email address.</li>
+          <li>Sign in and complete your profile.</li>
+          <li>Coaches will be taken to team registration.</li>
+        </ol>
+
+
+        <p>
+          Your selected role is permanent and cannot be changed later.
+        </p>
+      </div>
+
+
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/register-team.css">
+
+  <script type="module" src="../js/teams.js"></script>
+</head>
+
+<body class="register-team-page">
+  <header class="register-team-header">
+    <div class="register-team-header-inner">
+      <a
+        class="register-team-logo"
+        href="home.html"
+      >
+        TURF <span>KENYA</span>
+      </a>
+
+      <nav class="register-team-nav">
+        <a href="home.html">
+          Dashboard
+        </a>
+
+        <a href="tournaments.html">
+          Tournaments
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a
+          id="register-team-link"
+          href="register-team.html"
+        >
+          Register team
+        </a>
+
+        <a href="profile.html">
+          My profile
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="register-team-main">
+    <section class="register-team-heading">
+      <p class="register-team-eyebrow">
+        Football community
+      </p>
+
+      <h1>
+        Teams
+      </h1>
+
+      <p>
+        Discover teams, join as a player, manage your team,
+        or invite another coach to a match.
+      </p>
+    </section>
+
+    <div
+      id="teams-message"
+      class="register-team-message"
+      hidden
+    >
+    </div>
+
+    <section class="register-team-card">
+      <div
+        id="teams-container"
+        class="teams-container"
+      >
+        <p>
+          Loading teams...
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/navigation.js"></script>
+</body>
+</html>

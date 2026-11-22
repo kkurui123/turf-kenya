@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Sign in to your Turf Kenya account."
+  >
+
+  <meta name="theme-color" content="#157347">
+
+  <title>Sign In | Turf Kenya</title>
+
+  <link rel="stylesheet" href="../css/account.css">
+
+  <!-- We will create this script next. -->
+  <script type="module" src="../js/login.js"></script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
+
+  <header class="account-header">
+    <div class="container">
+      <a
+        class="logo"
+        href="../index.html"
+        aria-label="Turf Kenya home"
+      >
+        TURF <span>KENYA</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="account-main">
+    <section class="account-card" aria-labelledby="page-title">
+
+      <div class="account-heading">
+        <p class="eyebrow">Your football community</p>
+
+        <h1 id="page-title">Welcome back</h1>
+
+        <p class="account-intro">
+          Sign in to continue to your Turf Kenya account.
+          If you have just registered, confirm your email first.
+        </p>
+      </div>
+
+      <noscript>
+        <p class="account-message">
+          JavaScript is required to sign in.
+          Please enable it in your browser.
+        </p>
+      </noscript>
+
+      <!-- Sign-in and confirmation feedback appears here. -->
+      <div
+        id="login-message"
+        class="account-message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        hidden
+      ></div>
+
+      <form id="login-form">
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            autocapitalize="none"
+            spellcheck="false"
+            maxlength="254"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button
+          id="login-button"
+          class="btn btn-primary btn-block"
+          type="submit"
+          disabled
+        >
+          Sign in
+        </button>
+
+        <p class="form-help">
+          Sign-in becomes available when the page finishes
+          loading its authentication script.
+        </p>
+
+      </form>
+
+      <p class="account-switch">
+        Don’t have an account?
+        <a href="register.html">Create an account</a>
+      </p>
+
+      <div class="account-note">
+        <h2>First time signing in?</h2>
+
+        <p>
+          Open the confirmation email sent after registration
+          and follow its link. Check your spam folder if you
+          cannot find the message.
+        </p>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>
